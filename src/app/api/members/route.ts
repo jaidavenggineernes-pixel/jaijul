@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/mongodb";
 import Member from "@/models/Member";
@@ -8,6 +9,7 @@ export async function GET() {
     const members = await Member.find({}).sort({ absen: 1, name: 1 });
     return NextResponse.json(members);
   } catch (error) {
+    console.error("MEMBER FETCH ERROR:", error);
     return NextResponse.json({ error: "Gagal mengambil data anggota" }, { status: 500 });
   }
 }
