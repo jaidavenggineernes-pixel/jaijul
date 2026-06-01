@@ -32,7 +32,11 @@ export default function LoginPage() {
         toast.success(`Selamat datang, ${data.user.name}!`);
         // Simpan nama di localStorage untuk keperluan UI frontend
         localStorage.setItem("vanguard_user", JSON.stringify(data.user));
-        router.push("/");
+        if (data.user.role === "admin") {
+          router.push("/admin");
+        } else {
+          router.push("/");
+        }
       } else {
         toast.error(data.error || "Gagal login");
       }
