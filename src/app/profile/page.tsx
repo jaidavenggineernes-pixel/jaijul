@@ -128,9 +128,8 @@ export default function ProfilePage() {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.1 * index }}
-                  whileHover={{ y: -5 }}
                   onClick={() => setSelectedMember(member)}
-                  className="glass-panel p-6 rounded-xl text-center group border border-white/5 hover:border-primary/50 transition-colors cursor-pointer"
+                  className="glass-panel p-6 rounded-xl text-center group border border-white/5 hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                 >
                   <div className="w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform overflow-hidden bg-gradient-to-br from-primary/20 to-purple-500/20">
                     {member.image ? (
